@@ -2,13 +2,13 @@ clear
 close all
 clc
 %% INPUT YOUR FOLDER HERE
-parent = '/home/loinn/Documents/testdata/'
+parent = 'H:\NeuraLynx\2022-12-24_09-51-36\'
 %% Indicate number of recording tetrodes
-num_tts = 4;
+num_tts = 8;
 % Indicate number of channels per n-trode
 num_ch_per_tt = 4;
 %% Add dependencies
-addpath(genpath('/home/loinn/MATLAB/spike_sorting_dependencies'))
+addpath(genpath('E:\Matlab\HuertaLab_spike_sorting\spike_sorting_dependencies'))
 %% Geometry file
 geom = [0 0; 20 0; 0 20; 20 20];
 
