@@ -2,7 +2,7 @@ clear
 close all
 clc
 %% INPUT YOUR FOLDER HERE
-parent = 'F:\NeuralynxData2023\PrepData2022Dec\'
+parent = 'F:\NeuralynxData2023\PrepData2022Dec\tempFolder\'
 %% Indicate number of recording tetrodes
 num_tts = 8;
 % Indicate number of channels per n-trode
@@ -52,9 +52,11 @@ for ifolder= 3:length(folders)
             mkdir(sprintf('tt%d',itt))
             for j = 1:num_ch_per_tt
                 if iCSC<10
-                    movefile(sprintf('CSC0%d.ncs',iCSC),sprintf('tt%d',itt))
+                    temp = dir(['CSC0',num2str(iCSC),'*']);
+                    movefile(temp.name,sprintf('tt%d',itt))
                 else
-                    movefile(sprintf('CSC%d.ncs',iCSC),sprintf('tt%d',itt))
+                    temp = dir(['CSC',num2str(iCSC),'*']);
+                    movefile(temp.name,sprintf('tt%d',itt))
                 end
                 iCSC = iCSC+1;
             end

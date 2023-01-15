@@ -22,7 +22,7 @@ CSC = sort(CSC);
     
 for i = 1:ch_per_tt
     sprintf('%s/CSC%d.ncs',folder,CSC(i))
-    [TSc,fsc,csc_values,info] = Nlx2MatCSC_v3(sprintf('%s/%s',folder,files(i).name), [1 0 1 0 1], 1, 1, 1);
+    [TSc,fsc,csc_values,info] = Nlx2MatCSC(sprintf('%s/%s',folder,files(i).name), [1 0 1 0 1], 1, 1, 1); % delete v3
     which Nlx2MatCSC_v3;
     ADBV = strfind(info,'-ADBitVolts');
     ADBV = find(~cellfun(@isempty,ADBV));
